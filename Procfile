@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -Djavax.net.ssl.trustStore=.jdk-overlay/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit -jar target/vuzy-pvl-telegram-bot-0.0.1-SNAPSHOT.jar

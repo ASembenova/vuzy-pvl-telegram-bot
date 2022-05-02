@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Сравнение специальностей</title>
+    <link th:href="@{classpath:static/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div>
+    <div>
+        <div th:replace="header :: content"></div>
+        <h1>Документ №<span th:text="${counter}"></span> от <span th:text="${datetime}"></span></h1>
+        <p><b>Название: </b>Сравнение специальностей <i><span th:text="${compare_param}"></span>
+            <br></br>
+            (<span th:text="${vuz1_name}"></span> и <span th:text="${vuz2_name}"></span>)</i></p>
+        <p><b>Заказчик: </b><span th:text="${firstname}"></span> <span th:text="${lastname}"></span></p>
+        <p>Всего специальностей в <span th:text="${vuz1_name}"></span>: <span th:text="${vuz1_total}"></span></p>
+        <p>Всего специальностей в <span th:text="${vuz2_name}"></span>: <span th:text="${vuz2_total}"></span></p>
+        <p>Общих специальностей, совпадающих <span th:text="${compare_param}"></span>: <span th:text="${common_total}"></span></p>
+        <table class="students_table paginate-table">
+            <thead>
+            <tr>
+                <th>Другие <span th:text="${vuz1_name}"></span></th>
+                <th>Общие <span th:text="${vuz1_name}"></span></th>
+                <th>Общие <span th:text="${vuz2_name}"></span></th>
+                <th>Другие <span th:text="${vuz2_name}"></span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="list:${array}">
+                <td th:text="${list[0]}"></td>
+                <td th:text="${list[1]}"></td>
+                <td th:text="${list[2]}"></td>
+                <td th:text="${list[3]}"></td>
+            </tr>
+            <tr>
+                <td>Всего: <span th:text="${vuz1_total}-${common_total}"></span></td>
+                <td>Всего: <span th:text="${common_total}"></span></td>
+                <td>Всего: <span th:text="${common_total}"></span></td>
+                <td>Всего: <span th:text="${vuz2_total}-${common_total}"></span></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="warning">
+            Информация в боте носит исключительно ознакомительный характер.<br></br>
+            Данные в боте основаны на наборе открытых данных о высших учебных заведениях Павлодарской области<br></br>
+            (https://data.egov.kz/datasets/view?index=zhogary_oku_oryndarynyn_tizbes)
+        </div>
+    </div>
+</div>
+</body>
+</html>

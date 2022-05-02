@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link th:href="@{classpath:static/style.css}" rel="stylesheet" />
+</head>
+<body>
+<div th:fragment="content">
+    <div class="qr">
+        <div class="titleBot"><b>Телеграм бот @VuzyPvlBot</b></div>
+        <div class="qr-image"><img th:src="@{classpath:static/images/qr.png}" width="100"/></div>
+        <a href="https://t.me/vuzy_pvl_bot">t.me/vuzy_pvl_bot</a>
+    </div>
+</div>
+</body>
+</html>

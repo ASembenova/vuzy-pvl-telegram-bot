@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div th:fragment="header">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">@VuzyPvlBot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="/updates">Обновления пользователей</a>
+                    <a class="nav-link" href="/users">Языки пользователей</a>
+                    <a class="nav-link" href="/docs">Сгенерированные документы</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Гость</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<footer th:fragment="footer">
+    <a th:href="@{/fragments}">Fragments Index</a> |
+    <a th:href="@{/markup}">Markup inclussion</a> |
+    <a th:href="@{/params}">Fragment params</a> |
+    <a th:href="@{/other}">Other</a>
+</footer>
+</body>
+</html>

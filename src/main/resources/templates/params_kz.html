@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link th:href="@{classpath:static/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+
+<div>
+    <div>
+        <div th:replace="header :: content"></div>
+        <h1>Қужат №<span th:text="${counter}"></span> <span th:text="${datetime}"></span></h1>
+        <p><b>Атауы: </b>ЖОО бойынша әртүрлі параметрлардың тізімі</p>
+        <p><b>Тапсырыс беруші: </b><span th:text="${firstname}"></span> <span th:text="${lastname}"></span></p>
+        <table class="students_table paginate-table">
+            <thead>
+            <tr>
+                <td>Параметр</td>
+                <td th:each="i: ${#numbers.sequence(1, numOfVuz)}" th:text="${i}"></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="list:${array}">
+                <td th:each="l : ${list}" th:text="${l}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
